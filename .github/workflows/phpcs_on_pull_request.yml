@@ -8,6 +8,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.pull_request.head.sha }}
+    - run: cat $GITHUB_EVENT_PATH
     - name: Run PHPCS inspection
       uses: docker://ghcr.io/rtcamp/action-phpcs-code-review:beta
       env:
